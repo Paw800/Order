@@ -8,88 +8,160 @@
         body {
             background-color: antiquewhite;
             font-family: Arial, sans-serif;
+            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
         }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
+        .header {
+            background-color: red;
+            color: white;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .header img.logo {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .header h1 {
+            margin-top: 0;
+            font-size: 64px;
+        }
+        nav {
+            background-color: #ffcc00;
+            width: 100%;
+            padding: 10px 0;
             text-align: center;
         }
-        h1 {
-            color: red;
-            margin-bottom: 20px;
-        }
-        form {
+        nav ul {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
         }
-        label {
+        nav ul li {
+            margin-right: 20px;
+        }
+        .order-container {
+            width: 80%;
+            margin-top: 20px;
+        }
+        .order-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .order-item h2 {
+            font-size: 32px;
+            color: red;
             margin-bottom: 10px;
-            font-size: 16px;
-            text-align: left;
         }
-        input[type="text"], input[type="number"], select {
-            font-size: 16px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+        .order-item img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
         }
-        input[type="submit"] {
-            font-size: 16px;
-            padding: 10px;
+        .order-item p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: black;
+        }
+        .order-item button {
             background-color: red;
             color: white;
             border: none;
-            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 18px;
             cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
         }
-        input[type="submit"]:hover {
+        .order-item button:hover {
             background-color: darkred;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Order Pizza</h1>
-        <form id="order-form">
-            <label for="pizza-type">Pizza Type</label>
-            <select id="pizza-type" name="pizza-type" required>
-                <option value="Mr.Six honey burger">Mr.Six honey burger</option>
-                <option value="Chorizo">Chorizo</option>
-                <option value="Fruit pizza">Fruit pizza</option>
-                <option value="Durian pizza">Durian pizza</option>
-                <option value="Orleans roast chicken pizza">Orleans roast chicken pizza</option>
-                <option value="South American shrimp pizza">South American shrimp pizza</option>
-                <option value="Lasagna">Lasagna</option>
-                <option value="Pepsi">Pepsi</option>
-            </select>
-            
-            <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
-            
-            <label for="address">Delivery Address</label>
-            <input type="text" id="address" name="address" required>
-            
-            <input type="submit" value="Place Order">
-        </form>
-    </div>
+    <header class="header">
+        <img src="https://www.theexaminernews.com/examiner-news/wp-content/uploads/2012/01/Pizza_Hut.png" alt="Pizza Hut Logo" class="logo">
+        <h1>Order</h1>
+        <nav>
+            <ul>
+                <li><a href="https://paw800.github.io/Home/">Home</a></li>
+                <li><a href="https://paw800.github.io/Menu/">Menu</a></li>
+                <li><a href="https://paw800.github.io/Account/">Account</a></li>
+                <li><a href="https://paw800.github.io/Order/">Order</a></li>
+                <li><a href="https://paw800.github.io/Service/">Service</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <script>
-        document.getElementById('order-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Your order has been placed!');
-            // Here you would typically send the form data to the server
-        });
-    </script>
+    <div class="order-container">
+        <div class="order-item">
+            <h2>Mr.Six honey burger</h2>
+            <img src="https://brookrest.com/wp-content/uploads/2020/05/AdobeStock_282247995-scaled.jpeg" alt="Mr.Six honey burger">
+            <p>A delicious burger with honey-glazed beef patty, topped with fresh lettuce, tomatoes, and a special sauce.</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="order-item">
+            <h2>Chorizo</h2>
+            <img src="https://cdn.tasteatlas.com/images/dishes/5c1f3d5983594f4cad2f0e20fe445afb.jpg" alt="Chorizo">
+            <p>Spicy chorizo sausage with grilled peppers and onions, served with a side of crispy fries.</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="order-item">
+            <h2>Fruit pizza</h2>
+            <img src="https://cp1.douguo.com/upload/caiku/4/3/3/690x390_4319cb34065f9a3c021d092af3d48d43.jpg" alt="Fruit pizza">
+            <p>A delightful pizza topped with assorted fresh fruits like strawberries, kiwis, and mangoes, drizzled with honey.</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="order-item">
+            <h2>Durian pizza with cheese and gold pillow</h2>
+            <img src="https://th.bing.com/th/id/OIP.5SIdMISBF-XSshJ4QpfFUgHaE8?rs=1&pid=ImgDetMain.jpg" alt="Durian pizza with cheese and gold pillow">
+            <p>An exotic pizza with durian slices, creamy cheese, and edible gold flakes, offering a unique blend of flavors.</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="order-item">
+            <h2>Orleans roast chicken pizza</h2>
+            <img src="https://th.bing.com/th/id/OIP.WCQZq8bj3jgP8zyGvOpgfgHaEt?rs=1&pid=ImgDetMain.jpg" alt="Orleans roast chicken pizza">
+            <p>Savory roast chicken with Cajun spices, red onions, and bell peppers, perfect for a hearty meal.</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="order-item">
+            <h2>South American shrimp pizza</h2>
+            <img src="https://th.bing.com/th/id/OIP.cdHOUyIAXma-1P7T6iTfWwHaE8?rs=1&pid=ImgDetMain.jpg" alt="South American shrimp pizza">
+            <p>Grilled shrimp with a tangy South American sauce, topped with fresh cilantro and lime zest, bursting with flavors.</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="order-item">
+            <h2>Lasagna</h2>
+            <img src="https://th.bing.com/th/id/R.18b92392a45b089acad77ac6c37216bc?rik=8L3CWXhA5sUCJg&pid=ImgRaw&r=0.jpg" alt="Lasagna">
+            <p>Layers of pasta sheets with rich Bolognese sauce, creamy béchamel, and melted mozzarella cheese, a classic Italian dish.</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="order-item">
+            <h2>Pepsi</h2>
+            <img src="https://th.bing.com/th/id/OIP.JiP8I-eqmmO7DRIblvbIcAHaE7?rs=1&pid=ImgDetMain.jpg" alt="Pepsi">
+            <p>A refreshing cola drink with a crisp taste, perfect to accompany any meal.</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
 </body>
 </html>
